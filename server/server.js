@@ -1,28 +1,24 @@
 const express = require('express');
 
 const app = express();
-const PORT = 5000;
+const PORT = 5002;
 
 const artistListArray = [
     {
         name: 'Miles Davis',
         born: 1926,
-        died: 1990,
     },
     {
         name: 'Duke Ellington',
         born: 1899,
-        died: 1974,
     },
     {
         name: 'John Coltrane',
         born: 1926,
-        died: 1987,
     },
     {
         name: 'Louis Daniel Armstrong',
         born: 1901,
-        died: 1971,
     },
 ];
 
@@ -46,10 +42,6 @@ const songListArray = [
 ];
 
 app.use(express.static('server/public'));
-
-app.get('/artist', (req, res) => {
-    res.send(artistListArray);
-});
 
 app.listen(PORT, () => {
     console.log('listening on port', PORT)
