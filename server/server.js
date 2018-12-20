@@ -1,7 +1,10 @@
 const express = require('express');
-
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = 5002;
+
+// Required for our POST requests to work
+app.use(bodyParser.urlencoded({extended: true}));
 
 const artistListArray = [
     {
@@ -40,6 +43,17 @@ const songListArray = [
         artist: 'The Dave Brubeck Quartet',
     },
 ];
+
+app.post('/artist', (req, res) => {
+    console.log(`In /artist POST with ${req.body}`);
+    const artistToAdd = req.body;
+    if(artistToAdd.name === 'Miles') {
+        artistToAdd.type = 'Jazz';
+    }
+    artistListArray.push(artistToAdd);
+    console.log(artistListArray);
+    res.sendStatus(201); // created!
+});
 
 app.use(express.static('server/public'));
 
