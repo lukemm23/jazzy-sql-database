@@ -44,6 +44,7 @@ function getArtistData() {
             $('#artistTableBody').append(`<tr>
                                             <td>${artist.name}</td>
                                             <td>${artist.born}</td>
+                                            <td>${artist.age}</td>
                                           </tr>`);
         }
     })

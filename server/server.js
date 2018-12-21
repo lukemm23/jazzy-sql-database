@@ -57,6 +57,7 @@ app.post('/artist', (req, res) => {
     if(artistToAdd.name === 'Miles') {
         artistToAdd.type = 'Jazz';
     }
+    artistToAdd.age = 2018 - artistToAdd.born;
     artistListArray.push(artistToAdd);
     console.log(artistListArray);
     res.sendStatus(201); // created!
