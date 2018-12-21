@@ -44,9 +44,16 @@ const songListArray = [
     },
 ];
 
+app.get('/artist', (req, res) => {
+    console.log(`In /artist GET`);
+    res.send(artistListArray);
+});
+
 app.post('/artist', (req, res) => {
     console.log(`In /artist POST with ${req.body}`);
     const artistToAdd = req.body;
+    // convert to number... again
+    artistToAdd.born = parseInt(artistToAdd.born);
     if(artistToAdd.name === 'Miles') {
         artistToAdd.type = 'Jazz';
     }
