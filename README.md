@@ -14,8 +14,8 @@
 
 > NOTE: For base mode, you should only need to modify server side code. Use the existing client code for testing.
 
-- [ ] Write a `CREATE TABLE` SQL statement for the songs.
-- [ ] Add a couple sample records using Postico to use for testing.
+- [ ] Write a `CREATE TABLE` SQL statement for the songs (add this to the [database.sql](database.sql) file).
+- [ ] Add a couple sample records to the table using Postico for testing.
 - [ ] Switch from returning data in the array to returning data from the database in your GET route (`song.router.js`).
 - [ ] Update your POST route to `INSERT INTO` the songs table (`song.router.js`).
 
