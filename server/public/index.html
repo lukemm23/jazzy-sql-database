@@ -13,29 +13,35 @@
     <h1>Get Jazzy AJAX</h1>
 
     <h2>Famous Jazz Artists</h2>
-    <input type="text" id="artist-name">
-    <input type="number" id="artist-born">
+    <input type="text" id="artist-name" placeholder="Artist name">
+    <input type="text" id="artist-born" placeholder="Artist birth date">
     <button id="submit-artist">Submit Artist</button>
     <table>
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Born</th>
-                <th>Age</th>
             </tr>
         </thead>
         <tbody id="artistTableBody">
             <!-- Append artists here -->
         </tbody>
     </table>
-
+    <br />
+    <hr />
     <h2>Famous Jazz Songs</h2>
     <!-- Form for songs goes here -->
+    <input type="text" id="song-name" placeholder="Song title">
+    <input type="text" id="song-length" placeholder="Length of song">
+    <input type="text" id="date-released" placeholder="Date released">
+    <button id="submit-artist">Submit Song</button>
+
     <table>
         <thead>
             <tr>
                 <th>Title</th>
-                <th>Artist</th>
+                <th>Length of Song</th>
+                <th>Date Released</th>
             </tr>
         </thead>
         <tbody id="songTableBody">

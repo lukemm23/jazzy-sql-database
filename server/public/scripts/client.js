@@ -44,13 +44,27 @@ function getArtistData() {
             $('#artistTableBody').append(`<tr>
                                             <td>${artist.name}</td>
                                             <td>${artist.born}</td>
-                                            <td>${artist.age}</td>
                                           </tr>`);
         }
-    })
+    });
 }
 
 // get song data from the server
 function getSongData() {
     // Make AJAX GET request here
+    $.ajax({
+        method: 'GET',
+        url: '/songs'
+    }).then(function (response) {
+        const listOfSongs = response;
+        $('#songTableBody').empty();
+        for (let song of listOfSongs) {
+            // Append each artist to the table
+            $('#songTableBody').append(`<tr>
+                                            <td>${song.title}</td>
+                                            <td>${song.length}</td>
+                                            <td>${song.date_released}</td>
+                                          </tr>`);
+        }
+    });
 }

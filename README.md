@@ -2,16 +2,26 @@
 
 - Fork
 - Clone
+- Create a database named `jazzy-ajax`
+- Create a table named `artists` within that database 
+  - SQL in the [database.sql](database.sql) file
 - `npm install` to get all of the dependencies (just `express` for now)
 - `npm start`
 - [http://localhost:5002](http://localhost:5002)
 
+
 ## Base
 
-- [ ] Display artists on the page
-- [ ] Send new artists to the server via POST
-- [ ] Bring your questions to class tomorrow!
+> NOTE: For base mode, you should only need to modify server side code. Use the existing client code for testing.
+
+- [ ] Write a `CREATE TABLE` SQL statement for the songs.
+- [ ] Add a couple sample records using Postico to use for testing.
+- [ ] Switch from returning data in the array to returning data from the database in your GET route (`song.router.js`).
+- [ ] Update your POST route to `INSERT INTO` the songs table (`song.router.js`).
+
 
 ## Stretch
 
-- [ ] Same as above for songs
+- [ ] Order results by the name of the artist / song.
+- [ ] Add an extra column in the database (using Postico).
+- [ ] Update the HTML, JS, AJAX and server route to support the new database column.
