@@ -15,7 +15,7 @@ function sendArtistToServer() {
     // What we want to send to the server as data
     const artistToSend = {name: $('#artist-name').val(), 
                           // .val() will always return a string
-                          born: parseInt($('#artist-born').val())};
+                          born: $('#artist-born').val()};
     console.log(artistToSend);
     // Send the data to the server
     $.ajax({
