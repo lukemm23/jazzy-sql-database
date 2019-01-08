@@ -42,8 +42,8 @@ function getArtistData() {
         for(let artist of listOfArtists) {
             // Append each artist to the table
             $('#artistTableBody').append(`<tr>
-                                            <td>${artist.name}</td>
-                                            <td>${artist.born}</td>
+                                            <td>${artist.artist_name}</td>
+                                            <td>${artist.year_born}</td>
                                           </tr>`);
         }
     });
