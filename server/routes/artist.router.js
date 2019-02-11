@@ -6,7 +6,7 @@ const Pool = pg.Pool; // Class
 
 // Connect Node to our database
 const pool = new Pool({
-    database: 'jazzy-ajax', // name of our database
+    database: 'jazzy_ajax', // name of our database
     host: 'localhost', // where is your database?
     port: 5432, // this is the default port
     max: 10, // number of connections
