@@ -2,7 +2,7 @@
 
 - Fork
 - Clone
-- Create a database named `jazzy-ajax`
+- Create a database named `jazzy_ajax`
 - Create a table named `artists` within that database 
   - SQL in the [database.sql](database.sql) file
 - `npm install` to get all of the dependencies (just `express` for now)
