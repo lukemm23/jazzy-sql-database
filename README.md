@@ -5,7 +5,7 @@
 - Create a database named `jazzy_ajax`
 - Create a table named `artists` within that database 
   - SQL in the [database.sql](database.sql) file
-- `npm install` to get all of the dependencies (just `express` for now)
+- `npm install` to get all of the dependencies
 - `npm start`
 - [http://localhost:5002](http://localhost:5002)
 
