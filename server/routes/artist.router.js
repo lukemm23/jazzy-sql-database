@@ -13,29 +13,17 @@ const pool = new Pool({
     idleTimeoutMillis: 10000 // 10 seconds
 });
 
-// Moving to the database and will no longer be needed here
-// const artistListArray = [
-//     {
-//         name: 'Miles Davis',
-//         born: '1926-05-26',
-//     },
-//     {
-//         name: 'Duke Ellington',
-//         born: '1899-04-29',
-//     }
-// ];
-
 router.get('/', (req, res) => {
     let queryText = `SELECT * FROM "artists";`;
     pool.query(queryText).then((result) => {
-        console.log(result);
-        res.send(result.rows); // result.rows will be an Array
+        // send back our query results as an array of objects
+        res.send(result.rows); // result.rows will always be an Array
     }).catch((error) => {
         console.log(`Error in GET /artists ${error}`);
+        // 500 means "server error", generic but effective
         res.sendStatus(500);
     });
     console.log(`In /artist GET`);
-    // res.send(artistListArray); // No longer needed
 });
 
 router.post('/', (req, res) => {
@@ -46,14 +34,12 @@ router.post('/', (req, res) => {
     pool.query(queryText, [artistToAdd.name, artistToAdd.born])
         .then((responseFromDatabase) => {
             console.log(responseFromDatabase);
+            // 201 means "created"
             res.sendStatus(201);
         }).catch((error) => {
             console.log(`Error in POST /artist ${error}`);
             res.sendStatus(500);
         });
-    // artistListArray.push(artistToAdd); // No longer needed
-    // console.log(artistListArray);
-    // res.sendStatus(201); // created!
 });
 
 module.exports = router;
