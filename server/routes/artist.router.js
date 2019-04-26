@@ -14,6 +14,8 @@ const pool = new Pool({
 });
 
 router.get('/', (req, res) => {
+    console.log(`In /artist GET`);
+
     let queryText = `SELECT * FROM "artists";`;
     pool.query(queryText).then((result) => {
         // send back our query results as an array of objects
@@ -23,11 +25,12 @@ router.get('/', (req, res) => {
         // 500 means "server error", generic but effective
         res.sendStatus(500);
     });
-    console.log(`In /artist GET`);
+    
 });
 
 router.post('/', (req, res) => {
     console.log(`In /artist POST with`, req.body);
+    
     const artistToAdd = req.body;
     const queryText = `INSERT INTO "artists" ("artist_name", "year_born")
                        VALUES ($1, $2);`;
