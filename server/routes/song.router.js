@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+// static content. this will be replaced with a database table
 const songListArray = [
     {
         title: 'Take Five',
@@ -21,7 +22,6 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     
-
     res.sendStatus(201);
 });
 
