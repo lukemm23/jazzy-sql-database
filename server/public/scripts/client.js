@@ -22,12 +22,14 @@ function sendArtistToServer() {
         method: 'POST',
         url: '/artist',
         data: artistToSend
-    }).then(function(pizza) {
-        // Take down the big div
+    }).then(function(response) {
         // happy path
-        console.log(pizza);
+        console.log(response);
         getArtistData();
-    })//.catch(function(error))... :(
+    }).catch(function(error) {
+        // unhappy path, something went wrong
+        console.log('error in artist post', error);        
+    });
 }
 
 // get artist data from the server
@@ -46,6 +48,8 @@ function getArtistData() {
                                             <td>${artist.year_born}</td>
                                           </tr>`);
         }
+    }).catch(function (error) {
+        console.log('error in artist get', error);
     });
 }
 
@@ -59,12 +63,14 @@ function getSongData() {
         const listOfSongs = response;
         $('#songTableBody').empty();
         for (let song of listOfSongs) {
-            // Append each artist to the table
+            // Append each song to the table
             $('#songTableBody').append(`<tr>
                                             <td>${song.title}</td>
                                             <td>${song.length}</td>
                                             <td>${song.date_released}</td>
                                           </tr>`);
         }
+    }).catch(function (error) {
+        console.log('error in song get', error);
     });
 }

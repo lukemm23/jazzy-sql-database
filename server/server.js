@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 5002;
+const PORT = 5000;
 const artistRouter = require('./routes/artist.router.js');
 const songRouter = require('./routes/song.router.js');
 
