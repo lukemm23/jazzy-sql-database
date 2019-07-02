@@ -7,7 +7,7 @@
   - SQL in the [database.sql](database.sql) file
 - `npm install` to get all of the dependencies
 - `npm start`
-- [http://localhost:5002](http://localhost:5002)
+- [http://localhost:5000](http://localhost:5000)
 
 
 ## Base
