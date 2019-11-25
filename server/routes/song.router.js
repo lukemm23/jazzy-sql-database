@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const pool = require('../modules/pool');
+
 
 // static content. this will be replaced with a database table
 const songListArray = [
