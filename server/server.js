@@ -7,6 +7,7 @@ const songRouter = require('./routes/song.router.js');
 
 // Required for our POST requests to work
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.use('/artist', artistRouter);
 app.use('/songs', songRouter);

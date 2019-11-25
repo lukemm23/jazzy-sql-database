@@ -19,12 +19,31 @@ const songListArray = [
 
 router.get('/', (req, res) => {
     console.log(`In /songs GET`);
-    res.send(songListArray);
+    pool.query(`SELECT * FROM "songs"`)
+        .then((response) => {
+            res.send(response.rows);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.sendStatus(500);
+        });
 });
 
-router.post('/', (req, res) => {
-    
-    res.sendStatus(201);
+router.post('/', (req,res) => {
+    const newSong = req.body;
+    console.log(newSong);
+
+    const queryString = `INSERT INTO "songs" (title, length, date_released) VALUES
+    ('${newSong.title}', '${newSong.length}', '${newSong.date_released}');`;
+
+    pool.query(queryString)
+        .then((response) => {
+            res.sendStatus(201);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.sendStatus(500);
+        });
 });
 
 module.exports = router;
